@@ -1,74 +1,67 @@
 import React from "react";
-import "./App.css";
-import CardContainer from "./components/CardContainer";
-import { Layout, Menu, Icon } from "antd";
+import { Layout, Menu, Radio, ConfigProvider } from "antd";
+import Page from "./Page";
 
-const { SubMenu } = Menu;
-const { Header, Content, Footer, Sider } = Layout;
+// locales
+import { Locale } from "antd/es/locale-provider";
+import enGB from "antd/es/locale/en_GB";
+import jaJP from "antd/es/locale/ja_JP";
 
-const titles = ["Small is beautiful."];
-const descriptions = [
-  "Small things have tremendous advantages over their larger counterparts. Among these is the ability to combine with other small things in the unique and useful ways."
-];
+const { Header, Footer } = Layout;
 
-const App: React.FC = () => {
-  return (
-    <Layout className="App">
-      <Header className="header">
-        <div className="logo" />
-        <Menu
-          theme="dark"
-          mode="horizontal"
-          defaultSelectedKeys={["2"]}
-          style={{ lineHeight: "64px" }}
-        >
-          <Menu.Item key="1">nav 1</Menu.Item>
-          <Menu.Item key="2">nav 2</Menu.Item>
-          <Menu.Item key="3">nav 3</Menu.Item>
-        </Menu>
-      </Header>
-      <Content style={{ padding: "10px 50px" }}>
-        <Layout style={{ padding: "24px 0", background: "#fff" }}>
-          <Sider width={200} style={{ background: "#fff" }}>
-            <Menu
-              mode="inline"
-              defaultSelectedKeys={["1"]}
-              defaultOpenKeys={["sub1"]}
-              style={{ height: "100%" }}
+interface State {
+  locale: Locale;
+}
+
+class App extends React.Component<{}, State> {
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      locale: enGB
+    };
+  }
+
+  changeLocale = (e: any) => {
+    const localeValue = e.target.value;
+    this.setState({ locale: localeValue });
+  };
+
+  render() {
+    const { locale } = this.state;
+
+    return (
+      <Layout className="App">
+        <Header className="header">
+          <Menu theme="dark" mode="horizontal" style={{ lineHeight: "64px" }}>
+            <Radio.Group
+              className="change-locale"
+              value={locale}
+              onChange={this.changeLocale}
             >
-              <SubMenu
-                key="sub1"
-                title={
-                  <span>
-                    <Icon type="compass" />
-                    Main principles
-                  </span>
-                }
-              ></SubMenu>
-              <SubMenu
-                key="sub2"
-                title={
-                  <span>
-                    <Icon type="bulb" />
-                    Sub principles
-                  </span>
-                }
-              ></SubMenu>
-            </Menu>
-          </Sider>
-          <Content style={{ padding: "0 24px", minHeight: 280 }}>
-            <CardContainer
-              titles={titles}
-              descriptions={descriptions}
-            ></CardContainer>
-          </Content>
-        </Layout>
-      </Content>
-      <Footer style={{ textAlign: "center" }}>
-        ©2019 Created by Daiki Watanabe
-      </Footer>
-    </Layout>
-  );
-};
+              <Radio.Button key="en" value={enGB}>
+                English
+              </Radio.Button>
+              <Radio.Button key="jp" value={jaJP}>
+                日本語
+              </Radio.Button>
+            </Radio.Group>
+          </Menu>
+        </Header>
+        <ConfigProvider locale={locale}>
+          <Page
+            key={
+              locale
+                ? locale.locale
+                : "en" /* Have to refresh for production environment */
+            }
+          />
+        </ConfigProvider>
+        <Footer style={{ textAlign: "center" }}>
+          ©2019 Created by Daiki Watanabe
+        </Footer>
+      </Layout>
+    );
+  }
+}
 
 export default App;
