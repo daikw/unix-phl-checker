@@ -12,19 +12,16 @@ function shorten(desc: string) {
   );
 }
 
-interface ICardContainerProps {
+interface Props {
   titles: Array<string>;
   descriptions: Array<string>;
 }
 
-interface ICardContainerState {
+interface State {
   checked: Array<number>;
 }
 
-class CardContainer extends React.Component<
-  ICardContainerProps,
-  ICardContainerState
-> {
+class CardContainer extends React.Component<Props, State> {
   render() {
     const gridStyle = {
       width: "25%",
