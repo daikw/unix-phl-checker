@@ -1,5 +1,6 @@
 import React from "react";
 import { Icon, Card } from "antd";
+import PrincipleCard from "./PrincipleCard";
 const { Meta } = Card;
 
 function shorten(desc: string) {
@@ -33,7 +34,7 @@ class CardContainer extends React.Component<
     let gridList = Array(1)
       .fill(undefined)
       .map((_, index) => (
-        <Card style={gridStyle} hoverable>
+        <PrincipleCard style={gridStyle} hoverable>
           <Meta
             title={
               <div>
@@ -49,7 +50,7 @@ class CardContainer extends React.Component<
             description={shorten(this.props.descriptions[index])}
             key={"card-" + String(index)}
           />
-        </Card>
+        </PrincipleCard>
       ));
 
     return <Card title="Card Title">{gridList}</Card>;
