@@ -21,10 +21,10 @@ interface State {
   checked: Array<number>;
 }
 
-class CardContainer extends React.Component<Props, State> {
   render() {
     const gridStyle = {
       width: "25%",
+export class CardContainer extends React.Component<Props, State> {
       margin: "15px"
     };
 
@@ -53,5 +53,3 @@ class CardContainer extends React.Component<Props, State> {
     return <Card title="Card Title">{gridList}</Card>;
   }
 }
-
-export default CardContainer;
