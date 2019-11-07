@@ -15,16 +15,11 @@ function shorten(desc: string) {
   );
 }
 
-interface Props {
-  titles: Array<string>;
-  descriptions: Array<string>;
-}
-
 interface State {
   checked: Array<number>;
 }
 
-export class CardContainer extends React.Component<Props, State> {
+export class CardContainer extends React.Component<{}, State> {
   renderCard = (index: number, title: string, desc: string) => {
     const gridStyle = {
       width: "80%",

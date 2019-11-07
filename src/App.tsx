@@ -4,8 +4,8 @@ import Page from "./Page";
 
 // locales
 import { Locale } from "antd/es/locale-provider";
-import enGB from "antd/es/locale/en_GB";
-import jaJP from "antd/es/locale/ja_JP";
+import enGB from "./custom_locale/en_GB";
+import jaJP from "./custom_locale/ja_JP";
 
 const { Header, Footer } = Layout;
 

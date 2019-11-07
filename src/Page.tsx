@@ -1,15 +1,10 @@
 import React from "react";
-// import "./Page.css";
-import CardContainer from "./components/CardContainer";
+import "./Page.css";
+import { CardContainer } from "./components/CardContainer";
 import { Layout, Menu, Icon } from "antd";
 
 const { SubMenu } = Menu;
 const { Content, Sider } = Layout;
-
-const titles = ["Small is beautiful."];
-const descriptions = [
-  "Small things have tremendous advantages over their larger counterparts. Among these is the ability to combine with other small things in the unique and useful ways."
-];
 
 class Page extends React.Component {
   render() {
@@ -45,10 +40,7 @@ class Page extends React.Component {
               </Menu>
             </Sider>
             <Content style={{ padding: "0 24px", minHeight: 280 }}>
-              <CardContainer
-                titles={titles}
-                descriptions={descriptions}
-              ></CardContainer>
+              <CardContainer />
             </Content>
           </Layout>
         </Content>
