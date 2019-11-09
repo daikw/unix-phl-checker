@@ -23,16 +23,16 @@ export class CardContainer extends React.Component<Props, {}> {
 
   // any but locale should be CardContainerLocale
   renderCards = (locale: any) => {
-    const { descriptions, titles } = this.getPrinciples(locale);
-    const card_count = descriptions.length;
+    const principles = this.getPrinciples(locale);
+    const card_count = principles.length;
 
     let cards = Array(card_count)
       .fill(undefined)
       .map((_, index) => (
         <PrincipleCard
           index={index}
-          title={titles[index]}
-          desc={descriptions[index]}
+          title={principles[index].title}
+          desc={principles[index].description}
           key={"pcard-" + String(index)}
         ></PrincipleCard>
       ));

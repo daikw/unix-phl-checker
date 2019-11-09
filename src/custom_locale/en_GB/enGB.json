@@ -1,19 +1,26 @@
 {
-  "main_principles": {
-    "titles": ["Small is beautiful.", "Make each program do one thing well."],
-    "descriptions": [
-      "Small things have tremendous advantages over their larger counterparts. Among these is the ability to combine with other small things in the unique and useful ways.",
-      "By focusing on a single task, a program can eliminate much extraneous od that often results in excess overhead, unnecessary conplicated and a lack of flexibility."
-    ]
-  },
-  "sub_principles": {
-    "titles": [
-      "Allow the user to tailor the environment.",
-      "Make operating system kernels small and lightweight."
-    ],
-    "descriptions": [
-      "UNIX users like the ability to control their environment---all of it. like the UNIX applications decidedly refrain from making decisions about styles of interaction and instead leave the choices to the user.",
-      "Despite the never-ending push for new features, UNIX developers prefer to keep the most central part of an operating system small. They don't always succeed at this, but thigs is their goal."
-    ]
-  }
+  "main_principles": [
+    {
+      "id": 1,
+      "title": "Small is beautiful.",
+      "description": "Small things have tremendous advantages over their larger counterparts. Among these is the ability to combine with other small things in the unique and useful ways."
+    },
+    {
+      "id": 2,
+      "title": "Make each program do one thing well.",
+      "description": "By focusing on a single task, a program can eliminate much extraneous od that often results in excess overhead, unnecessary conplicated and a lack of flexibility."
+    }
+  ],
+  "sub_principles": [
+    {
+      "id": 1,
+      "title": "Allow the user to tailor the environment.",
+      "description": "UNIX users like the ability to control their environment---all of it. like the UNIX applications decidedly refrain from making decisions about styles of interaction and instead leave the choices to the user."
+    },
+    {
+      "id": 2,
+      "title": "Make operating system kernels small and lightweight.",
+      "description": "Despite the never-ending push for new features, UNIX developers prefer to keep the most central part of an operating system small. They don't always succeed at this, but thigs is their goal."
+    }
+  ]
 }
