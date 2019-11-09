@@ -58,6 +58,16 @@ class App extends React.Component<{}, State> {
         </ConfigProvider>
         <Footer style={{ textAlign: "center" }}>
           ©2019 Created by Daiki Watanabe
+          <div style={{ fontSize: 8 }}>
+            Icons made by{" "}
+            <a href="https://www.flaticon.com/authors/freepik" title="Freepik">
+              Freepik
+            </a>{" "}
+            from{" "}
+            <a href="https://www.flaticon.com/" title="Flaticon">
+              www.flaticon.com
+            </a>
+          </div>
         </Footer>
       </Layout>
     );
