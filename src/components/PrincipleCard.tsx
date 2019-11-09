@@ -1,43 +1,59 @@
 import React from "react";
-import { Card, Modal } from "antd";
+import { Card, Icon } from "antd";
 
-class PrincipleCard extends Card {
-  state = { visible: false };
+const { Meta } = Card;
+
+const gridStyle = {
+  width: "80%",
+  margin: "15px"
+};
+
+interface Props {
+  index: number;
+  title: string;
+  desc: string;
+}
+
+interface State {
+  checked: boolean;
+}
+
+class PrincipleCard extends React.Component<Props, State> {
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      checked: false
+    };
+  }
 
   handleClick = () => {
-    console.log("clicked!");
-    this.showModal();
-  };
-
-  showModal = () => {
-    console.log("updated!");
-    console.log(this.state);
-    this.setState({
-      visible: true
-    });
-  };
-
-  handleOk = () => {
-    this.setState({
-      visible: false
-    });
-  };
-
-  handleCancel = () => {
-    this.setState({
-      visible: false
-    });
+    this.setState({ checked: !this.state.checked });
   };
 
   render() {
     return (
-      <div>
-        <Modal
-          visible={this.state.visible}
-          onOk={this.handleOk.bind(this)}
-          onCancel={this.handleCancel.bind(this)}
-        ></Modal>
-        <div onClick={this.handleClick.bind(this)}>{super.render()}</div>
+      <div onClick={this.handleClick.bind(this)}>
+        <Card style={gridStyle} hoverable>
+          <Meta
+            title={
+              <div>
+                <Icon
+                  type="check-circle"
+                  theme="twoTone"
+                  twoToneColor="#52c41a"
+                  style={{
+                    float: "right",
+                    margin: "0 5px",
+                    visibility: this.state.checked ? "unset" : "hidden"
+                  }}
+                />
+                <span>{this.props.title}</span>
+              </div>
+            }
+            description={this.props.desc}
+            key={"card-" + String(this.props.index)}
+          />
+        </Card>
       </div>
     );
   }
