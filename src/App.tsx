@@ -77,7 +77,10 @@ class App extends React.Component<{}, State> {
           />
         </ConfigProvider>
         <Footer style={{ textAlign: "center" }}>
-          ©2019 Created by Daiki Watanabe
+          ©2019 Created by{" "}
+          <a href="https://www.linkedin.com/in/daiki-watanabe-578761b6/">
+            Daiki Watanabe
+          </a>
           <div style={{ fontSize: 8 }}>
             Icons made by{" "}
             <a href="https://www.flaticon.com/authors/freepik" title="Freepik">
