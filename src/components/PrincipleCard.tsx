@@ -4,7 +4,6 @@ import { Card, Icon } from "antd";
 const { Meta } = Card;
 
 const gridStyle = {
-  width: "80%",
   margin: "15px"
 };
 
