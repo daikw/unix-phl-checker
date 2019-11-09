@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout, Menu, Radio, ConfigProvider } from "antd";
+import { Layout, Menu, Radio, ConfigProvider, Icon } from "antd";
 import Page from "./Page";
 
 // locales
@@ -7,6 +7,7 @@ import { Locale } from "antd/es/locale-provider";
 import enGB from "./custom_locale/en_GB";
 import jaJP from "./custom_locale/ja_JP";
 
+const { SubMenu } = Menu;
 const { Header, Footer } = Layout;
 
 interface State {
@@ -33,10 +34,29 @@ class App extends React.Component<{}, State> {
       <Layout className="App">
         <Header className="header">
           <Menu theme="dark" mode="horizontal" style={{ lineHeight: "64px" }}>
+            <SubMenu
+              key="sub1"
+              title={
+                <span>
+                  <Icon type="compass" />
+                  Main principles
+                </span>
+              }
+            ></SubMenu>
+            <SubMenu
+              key="sub2"
+              title={
+                <span>
+                  <Icon type="bulb" />
+                  Sub principles
+                </span>
+              }
+            ></SubMenu>
             <Radio.Group
               className="change-locale"
               value={locale}
               onChange={this.changeLocale}
+              style={{ float: "right" }}
             >
               <Radio.Button key="en" value={enGB}>
                 English
