@@ -10,7 +10,9 @@ interface State {
 export class CardContainer extends React.Component<{}, State> {
   renderCards = (locale: any) => {
     const { descriptions, titles } = locale.principles;
-    let cards = Array(2)
+    const card_count = descriptions.length;
+
+    let cards = Array(card_count)
       .fill(undefined)
       .map((_, index) => (
         <PrincipleCard
