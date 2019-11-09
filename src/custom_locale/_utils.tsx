@@ -6,7 +6,8 @@ interface principleLocale {
 }
 
 export interface CardContainerLocale {
-  principles: principleLocale;
+  main_principles: principleLocale;
+  sub_principles: principleLocale;
 }
 
 export function withCustomLocale(

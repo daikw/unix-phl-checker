@@ -1,59 +1,41 @@
 import React from "react";
-import { Icon, Card } from "antd";
-import PrincipleCard from "./PrincipleCard";
 import { ConfigConsumer, ConfigConsumerProps } from "antd/es/config-provider";
 import LocaleReceiver from "antd/es/locale-provider/LocaleReceiver";
 
-const { Meta } = Card;
+import PrincipleCard from "./PrincipleCard";
+import { CardContainerLocale } from "../custom_locale/_utils";
 
-function shorten(desc: string) {
-  return (
-    desc
-      .split(" ")
-      .slice(0, 3)
-      .join(" ") + " ..."
-  );
+interface Props {
+  category: string;
 }
 
-interface State {
-  checked: Array<number>;
-}
-
-export class CardContainer extends React.Component<{}, State> {
-  renderCard = (index: number, title: string, desc: string) => {
-    const gridStyle = {
-      width: "80%",
-      margin: "15px"
-    };
-
-    return (
-      <PrincipleCard style={gridStyle} hoverable>
-        <Meta
-          title={
-            <div>
-              <Icon
-                type="check-circle"
-                theme="twoTone"
-                twoToneColor="#52c41a"
-                style={{ float: "right", margin: "0 5px" }}
-              />
-              <span>{title}</span>
-            </div>
-          }
-          description={shorten(desc)}
-          key={"card-" + String(index)}
-        />
-      </PrincipleCard>
-    );
+export class CardContainer extends React.Component<Props, {}> {
+  getPrinciples = (locale: CardContainerLocale) => {
+    switch (this.props.category) {
+      case "main":
+        return locale.main_principles;
+      case "sub":
+        return locale.sub_principles;
+      default:
+        return locale.main_principles;
+    }
   };
 
+  // any but locale should be CardContainerLocale
   renderCards = (locale: any) => {
-    const { descriptions, titles } = locale.principles;
-    let cards = Array(2)
+    const { descriptions, titles } = this.getPrinciples(locale);
+    const card_count = descriptions.length;
+
+    let cards = Array(card_count)
       .fill(undefined)
-      .map((_, index) =>
-        this.renderCard(index, titles[index], descriptions[index])
-      );
+      .map((_, index) => (
+        <PrincipleCard
+          index={index}
+          title={titles[index]}
+          desc={descriptions[index]}
+          key={"pcard-" + String(index)}
+        ></PrincipleCard>
+      ));
     return <div>{cards}</div>;
   };
 
