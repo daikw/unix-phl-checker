@@ -1,15 +1,29 @@
 import React from "react";
-import PrincipleCard from "./PrincipleCard";
 import { ConfigConsumer, ConfigConsumerProps } from "antd/es/config-provider";
 import LocaleReceiver from "antd/es/locale-provider/LocaleReceiver";
 
-interface State {
-  checked: Array<number>;
+import PrincipleCard from "./PrincipleCard";
+import { CardContainerLocale } from "../custom_locale/_utils";
+
+interface Props {
+  category: string;
 }
 
-export class CardContainer extends React.Component<{}, State> {
+export class CardContainer extends React.Component<Props, {}> {
+  getPrinciples = (locale: CardContainerLocale) => {
+    switch (this.props.category) {
+      case "main":
+        return locale.main_principles;
+      case "sub":
+        return locale.sub_principles;
+      default:
+        return locale.main_principles;
+    }
+  };
+
+  // any but locale should be CardContainerLocale
   renderCards = (locale: any) => {
-    const { descriptions, titles } = locale.principles;
+    const { descriptions, titles } = this.getPrinciples(locale);
     const card_count = descriptions.length;
 
     let cards = Array(card_count)
@@ -19,6 +33,7 @@ export class CardContainer extends React.Component<{}, State> {
           index={index}
           title={titles[index]}
           desc={descriptions[index]}
+          key={"pcard-" + String(index)}
         ></PrincipleCard>
       ));
     return <div>{cards}</div>;

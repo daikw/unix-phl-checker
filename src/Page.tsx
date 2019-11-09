@@ -5,14 +5,19 @@ import { Layout } from "antd";
 
 const { Content } = Layout;
 
-class Page extends React.Component {
+interface Props {
+  category: string;
+}
+
+class Page extends React.Component<Props, {}> {
   render() {
+    const { category } = this.props;
     return (
       <Layout className="Page">
         <Content style={{ padding: "10px 50px" }}>
           <Layout style={{ padding: "24px 0", background: "#fff" }}>
             <Content style={{ padding: "0 24px", minHeight: 280 }}>
-              <CardContainer />
+              <CardContainer category={category} />
             </Content>
           </Layout>
         </Content>
