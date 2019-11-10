@@ -1,4 +1,4 @@
-# money-making-1
+# unix-phl-checker
 
 trello board: https://trello.com/b/U88NyJDO
 
