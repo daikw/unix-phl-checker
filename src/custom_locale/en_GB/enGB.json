@@ -9,6 +9,41 @@
       "id": 2,
       "title": "Make each program do one thing well.",
       "description": "By focusing on a single task, a program can eliminate much extraneous od that often results in excess overhead, unnecessary conplicated and a lack of flexibility."
+    },
+    {
+      "id": 3,
+      "title": "Build a prototype as soon as possible.",
+      "description": "Most people would agree that prototyping is a valuable element of any project. But whereas prototyping is only a small part of the design phase under other methodologies, under UNIX it is the principal vehicle for generating an effective design."
+    },
+    {
+      "id": 4,
+      "title": "Choose portability over efficiency.",
+      "description": "When UNIX broke new ground as the first portable operating system of any significance, it was big news. Today portability is taken for granted as a necessity in any modern software design, an example of a tenet that has gained wide acceptance on other systems besides UNIX."
+    },
+    {
+      "id": 5,
+      "title": "Store numerical data in flat ASCII files.",
+      "description": "The choice between portability and efficiency addresses the value of portable code. Portable data is at least as important as—if not more important than—portable code. Portable data is the often-neglected part of the portability formula."
+    },
+    {
+      "id": 6,
+      "title": "Use software leverage to your advantage.",
+      "description": "Despite the never-ending push for new features, UNIX developers prefer to keep the most central part of an operating system small. They don't always succeed at this, but thigs is their goal."
+    },
+    {
+      "id": 7,
+      "title": "Use shell scripts to increase leverage and portability.",
+      "description": "Shell scripts are a double-edged sword for enhancing both software leverage and portability in a design. Whenever possible, writing a script instead of a complete C program is the way to go."
+    },
+    {
+      "id": 8,
+      "title": "Avoid captive user interfaces.",
+      "description": "Some commands have user interfaces known to UNIX developers as 'captive' user interfaces. These prevent the user from running other commands while the command is in use, effectively making the user a captive to the system for the duration of the command. Hence the name captive user interface."
+    },
+    {
+      "id": 9,
+      "title": "Make every program a filter.",
+      "description": "The fundamental nature of all software programs is that they only modify data, not create it. Therefore, they should be written to perform as filters since they are filters. "
     }
   ],
   "sub_principles": [
@@ -21,6 +56,46 @@
       "id": 2,
       "title": "Make operating system kernels small and lightweight.",
       "description": "Despite the never-ending push for new features, UNIX developers prefer to keep the most central part of an operating system small. They don't always succeed at this, but thigs is their goal."
+    },
+    {
+      "id": 3,
+      "title": "Use lower case and keep it short.",
+      "description": "Using lower case characters is a tradition in the UNIX environment that has per-sisted long after the reason for doing so disappeared. Many UNIX users today use lower case commands and cryptic names because they want to, not because they're forced to anymore."
+    },
+    {
+      "id": 4,
+      "title": "Save trees.",
+      "description": "UNIX users generally frown on using paper listings. There are good reasons for keeping all text on-line and using powerful tools to manipulate it."
+    },
+    {
+      "id": 5,
+      "title": "Silence is golden.",
+      "description": "UNIX commands are notoriously silent when it comes to producing detailed error messages. Although more experienced UNIX users consider this a desirable trait, many users of other operating systems would beg to differ."
+    },
+    {
+      "id": 6,
+      "title": "Think parallel.",
+      "description": "Most tasks can be broken down into a series of smaller subtasks. These subtasks can then be run in parallel to accomplish more in the same amount of time as one large task. A significant amount of activity occurs around symmetric multiprocessing (SMP) designs today, an example of a general trend in the computer industry towards parallelization."
+    },
+    {
+      "id": 7,
+      "title": "The sum of the parts is greater than the whole.",
+      "description": "This tenet stems from the idea that a large application built from a collec-tion of smaller programs is more flexible and hence more useful than a single large program. The same functional capability may exist in both solutions, but the collection of small programs approach is the more forward-looking of the two."
+    },
+    {
+      "id": 8,
+      "title": "Look for the 90 percent solution.",
+      "description": "Doing 100 percent of anything is difficult. Doing only 90 percent is far more efficient and cost effective. UNIX developers often look for solutions that satisfy 90 percent to fend for itself."
+    },
+    {
+      "id": 9,
+      "title": "Worse is better.",
+      "description": "UNIX aficionados believe that a 'least common denominator' system is the one most likely to survive. That which is cheap but effective is far more likely to proliferate than that which is high quality and expensive. The PC-compatible world borrowed this idea from the UNIX world and is making quite a go of it."
+    },
+    {
+      "id": 10,
+      "title": "Think hierarchically.",
+      "description": "UNIX users and developers prefer to organize things hierarchically. For example, the UNIX directory structure was among the first tree-structured architectures applied to file systems. UNIX has extended hierarchical thinking to other areas, such as network service naming, window management, and object-oriented development."
     }
   ]
 }
