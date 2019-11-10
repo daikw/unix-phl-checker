@@ -89,8 +89,11 @@ class App extends React.Component<{}, State> {
           ©2019 Created by{" "}
           <a href="https://www.linkedin.com/in/daiki-watanabe-578761b6/">
             Daiki Watanabe
+          </a>{" "}
+          <a href="https://github.com/daikw/unix-phl-checker">
+            <Icon type="github" />
           </a>
-          <div style={{ fontSize: 10 }}>
+          <div style={{ fontSize: 10, margin: 5 }}>
             <p>
               This page was inspired by{" "}
               <a href="https://en.wikipedia.org/wiki/Unix_philosophy">
