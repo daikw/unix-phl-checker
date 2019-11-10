@@ -1,13 +1,14 @@
 import { Locale } from "antd/es/locale-provider";
 
 interface principleLocale {
-  titles: Array<string>;
-  descriptions: Array<string>;
+  id: number;
+  title: string;
+  description: string;
 }
 
 export interface CardContainerLocale {
-  main_principles: principleLocale;
-  sub_principles: principleLocale;
+  main_principles: Array<principleLocale>;
+  sub_principles: Array<principleLocale>;
 }
 
 export function withCustomLocale(

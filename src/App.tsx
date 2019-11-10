@@ -24,7 +24,7 @@ class App extends React.Component<{}, State> {
   constructor(props: any) {
     super(props);
     this.state = {
-      locale: enGB,
+      locale: jaJP,
       category: "main"
     };
   }
@@ -66,11 +66,11 @@ class App extends React.Component<{}, State> {
               onChange={this.changeLocale}
               style={{ float: "right" }}
             >
-              <Radio.Button key="en" value={enGB}>
-                English
-              </Radio.Button>
               <Radio.Button key="jp" value={jaJP}>
                 日本語
+              </Radio.Button>
+              <Radio.Button key="en" value={enGB}>
+                English
               </Radio.Button>
             </Radio.Group>
           </Menu>
@@ -90,6 +90,15 @@ class App extends React.Component<{}, State> {
           <a href="https://www.linkedin.com/in/daiki-watanabe-578761b6/">
             Daiki Watanabe
           </a>
+          <div style={{ fontSize: 10 }}>
+            <p>
+              This page was inspired by{" "}
+              <a href="https://en.wikipedia.org/wiki/Unix_philosophy">
+                The UNIX Philosophy
+              </a>
+              .
+            </p>
+          </div>
           <div style={{ fontSize: 8 }}>
             Icons made by{" "}
             <a href="https://www.flaticon.com/authors/freepik" title="Freepik">
