@@ -24,7 +24,7 @@ class App extends React.Component<{}, State> {
   constructor(props: any) {
     super(props);
     this.state = {
-      locale: enGB,
+      locale: jaJP,
       category: "main"
     };
   }
@@ -66,11 +66,11 @@ class App extends React.Component<{}, State> {
               onChange={this.changeLocale}
               style={{ float: "right" }}
             >
-              <Radio.Button key="en" value={enGB}>
-                English
-              </Radio.Button>
               <Radio.Button key="jp" value={jaJP}>
                 日本語
+              </Radio.Button>
+              <Radio.Button key="en" value={enGB}>
+                English
               </Radio.Button>
             </Radio.Group>
           </Menu>
